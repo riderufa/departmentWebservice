@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 p-1">
+            <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="view">
+                            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+                                 alt="First slide">
+                            <div class="mask rgba-black-light"></div>
+                        </div>
+                        <div class="carousel-caption">
+                            <h3 class="h3-responsive">Light mask</h3>
+                            <p>First text</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+                                 alt="Second slide">
+                            <div class="mask rgba-black-strong"></div>
+                        </div>
+                        <div class="carousel-caption">
+                            <h3 class="h3-responsive">Strong mask</h3>
+                            <p>Secondary text</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="view">
+                            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+                                 alt="Third slide">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                        <div class="carousel-caption">
+                            <h3 class="h3-responsive">Slight mask</h3>
+                            <p>Third text</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <ul>
+                <li>
+                    <a href="#boss1">Начальники кафедры</a>
+                </li>
+                <li>
+                    <a href="#boss2">Преподаватели</a>
+                </li>
+                <li>
+                    <a href="#boss3">Состав лаборатории</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-9">
+            <h5 id="boss1">Начальники кафедры</h5>
+            <div class="row">
+                {% for teacher in teachers %}
+                    <div class="col-4 p-0">
+                        <div class="card m-1">
+                            <div class="view overlay">
+                                <img class="card-img-top"
+                                     src="{{ teacher.profile.image_url }}"
+                                     alt="Card image cap">
+                                <a href="#!">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">{{ teacher.last_name }}</h6>
+                                <h6 class="card-title">{{ teacher.first_name }}</h6>
+                                <h6 class="card-title">{{ teacher.profile.patronymic }}</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of
+                                    the
+                                    card's
+                                    content.</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <h5 id="boss2">Преподаватели</h5>
+            <div class="row">
+                {% for teacher in teachers %}
+                    <div class="col-4 p-0">
+                        <div class="card m-1">
+                            <div class="view overlay">
+                                <img class="card-img-top"
+                                     src="{{ teacher.profile.image_url }}"
+                                     alt="Card image cap">
+                                <a href="#!">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">{{ teacher.last_name }}</h6>
+                                <h6 class="card-title">{{ teacher.first_name }}</h6>
+                                <h6 class="card-title">{{ teacher.profile.patronymic }}</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of
+                                    the
+                                    card's
+                                    content.</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <h5 id="boss3">Состав лаборатории</h5>
+            <div class="row">
+                {% for teacher in teachers %}
+                    <div class="col-4 p-0">
+                        <div class="card m-1">
+                            <div class="view overlay">
+                                <img class="card-img-top"
+                                     src="{{ teacher.profile.image_url }}"
+                                     alt="Card image cap">
+                                <a href="#!">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">{{ teacher.last_name }}</h6>
+                                <h6 class="card-title">{{ teacher.first_name }}</h6>
+                                <h6 class="card-title">{{ teacher.profile.patronymic }}</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of
+                                    the
+                                    card's
+                                    content.</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
