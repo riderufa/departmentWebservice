@@ -1,3 +1,5 @@
 venv
 static
 .idea
+.DS_Store
+.gitignore
